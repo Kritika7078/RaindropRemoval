@@ -1,100 +1,87 @@
-# RaindropClarity (ECCV'2024) (Challenge-CVPR-NTIRE'2025)
+# Adapt or Perish: Adaptive Sparse Transformer with Attentive Feature Refinement for Image Restoration (CVPR 2024)
 
-## Introduction
-> [Raindrop Clarity: A Dual-Focused Dataset for Day and Night Raindrop Removal](https://arxiv.org/abs/2407.16957)<br>
-> European Conference on Computer Vision (ECCV'2024) (Workshop and Challenges @ CVPR-NTIRE'2025)
-> 
-[![arXiv](https://img.shields.io/badge/arXiv-Paper-<COLOR>.svg)](https://arxiv.org/abs/2407.16957)
-[[Poster]](https://github.com/jinyeying/RaindropClarity/blob/main/poster_slides/RaindropClarity_poster.pdf) 
-[[Slides]](https://github.com/jinyeying/RaindropClarity/blob/main/poster_slides/RaindropClarity_PPT.pdf) 
-[[Video]](https://www.youtube.com/watch?v=LSGvCuT46XU)
-
-## Workshop and Challenges @ CVPR-NTIRE'2025
-The first challenge on Day and Night Raindrop Removal for Dual-Focused Images is available at (https://codalab.lisn.upsaclay.fr/competitions/21345)
-
-### Abstract
- Existing raindrop removal datasets have two shortcomings. First, they consist of images captured by cameras with a focus on the background, leading to the presence of blurry raindrops. To our knowledge, none of these datasets include images where the focus is specifically on raindrops, which results in a blurry background. Second, these datasets predominantly consist of daytime images, thereby lacking nighttime raindrop scenarios. Consequently, algorithms trained on these datasets may struggle to perform effectively in raindrop-focused or nighttime scenarios. The absence of datasets specifically designed for raindrop-focused and nighttime raindrops constrains research in this area. In this paper, we introduce a large-scale, real-world raindrop removal dataset called Raindrop Clarity. Raindrop Clarity comprises 15,186 high-quality pairs/triplets (raindrops, blur, and background) of images with raindrops and the corresponding clear background images. There are 5,442 daytime raindrop images and 9,744 nighttime raindrop images. Specifically, the 5,442 daytime images include 3,606 raindrop- and 1,836 background-focused images. While the 9,744 nighttime images contain 4,838 raindrop- and 4,906 background-focused images. Our dataset will enable the community to explore background-focused and raindrop-focused images, including challenges unique to daytime and nighttime conditions. 
-
-## RaindropClarity Dataset
- |Day_Train   |[Dropbox](https://www.dropbox.com/scl/fi/qes7r934c10qzb21funoj/DayRainDrop_Train.zip?rlkey=bdqa53wgvmhj9x1yf40q0c1p7&st=4taffjkx&dl=0) | [BaiduPan](https://pan.baidu.com/s/1-vwhYA7jEDPAYHlznhcHCA?pwd=j9ay) code:j9ay |[GoogleDrive](https://drive.google.com/file/d/1lHOumI4wDsJfgGnDPOCXM6h_C1F5ZQEA/view?usp=sharing)|
- |:-----------:| :-----------: | :-----------: |:-----------: |
- |Night_Train|[Dropbox](https://www.dropbox.com/scl/fi/cw3ji53qxy18sepuk6wcp/NightRainDrop_Train.zip?rlkey=r2yn224ryek9wxkbchedeg13j&st=jzo93x80&dl=0)| [BaiduPan](https://pan.baidu.com/s/13x6-UzqxaJG7tKv2WMyMuQ?pwd=hmsw) code:hmsw| [GoogleDrive](https://drive.google.com/file/d/1_ruwsBCzbOEkpqcqHIeKoyCg6P2Sxclr/view?usp=sharing)|
+[Shihao Zhou](https://joshyzhou.github.io/), [Duosheng Chen](https://github.com/Calvin11311), [Jinshan Pan](https://jspan.github.io/), [Jinglei Shi](https://jingleishi.github.io/), and [Jufeng Yang](https://cv.nankai.edu.cn/)
 
 
-## Pre-trained Models: [BaiduPan](https://pan.baidu.com/s/1tzJX--WD7YsYbpc9nGBQ0w?pwd=i3dg) code:i3dg and [Results](https://pan.baidu.com/s/1kVxJK0HgSDe5pglQ2uTj3A?pwd=outp) code:outp
-| Model Name | Model Dropbox | Model BaiduPan | Results Dropbox | Results BaiduPan |
-| :----: | :-----------: | :----------: |:---------------: |  :----------: |
-| Raindrop + Restoration| [Dropbox](https://www.dropbox.com/scl/fo/oy0s69m4jienlvjpu52wi/ACnxDbcyX2K0trBdEJa4DdQ?rlkey=jn0wkbaf8d4xv8rqixhhuhymy&dl=0) | [BaiduPan](https://pan.baidu.com/s/1tzJX--WD7YsYbpc9nGBQ0w?pwd=i3dg) code:i3dg| [Dropbox]() | [BaiduPan](https://pan.baidu.com/s/1kVxJK0HgSDe5pglQ2uTj3A?pwd=outp) code:outp|  
+#### News
+- **Feb 27, 2024:** AST has been accepted to CVPR 2024 :tada: 
+
+<hr />
+
+<!-- > **Abstract:** *Transformer-based approaches have achieved promising performance in image restoration tasks, given their ability to model long-range dependencies, which is crucial for recovering clear images. Though diverse efficient attention mechanism designs have addressed the intensive computations associated with using transformers, they often involve redundant information and noisy interactions from irrelevant regions by considering all available tokens. In this work, we propose an <strong>A</strong>daptive <strong>S</strong>parse <strong>T</strong>ransformer (<strong>AST</strong>) to mitigate the noisy interactions of irrelevant areas and remove feature redundancy in both spatial and channel domains. AST comprises two core designs, i.e., an Adaptive Sparse Self-Attention (ASSA) block and a Feature Refinement Feed-forward Network (FRFN). Specifically, ASSA is adaptively computed using a two-branch paradigm, where the sparse branch is introduced to filter out the negative impacts of low query-key matching scores for aggregating features, while the dense one ensures sufficient information flow through the network for learning discriminative representations. Meanwhile, FRFN employs an enhance-and-ease scheme to eliminate feature redundancy in channels, enhancing the restoration of clear latent images. Experimental results on commonly used benchmarks have demonstrated the versatility and competitive performance of our method in <strong>6</strong> tasks, including deraining, dehazing, deraindrop, demoireing, desnowing and deshadowing.* 
+<hr /> -->
+
+## Package dependencies
+The project is built with PyTorch 1.9.0, Python3.7, CUDA11.1. For package dependencies, you can install them by:
+```bash
+pip install -r requirements.txt
+```
+## Training
+### Derain
+To train AST on SPAD, you can run:
+```sh
+sh script/train_derain.sh
+```
+### Dehaze
+To train AST on Densehaze, you can run:
+```sh
+sh script/train_dehaze.sh
+```
+### Raindrop
+To train AST on AGAN, you can run:
+```sh
+sh script/train_raindrop.sh
+```
+
 
 ## Evaluation
-```
-python calculate_psnr_ssim_sid.py
-```
-please change `base_path`, `time_of_day`, `model_name` accordingly.
+To evaluate AST, you can run:
 
-## Raindrop-focused or Background-focused
-The analysis code is available at [analyse/cal_rf_bf.py](https://github.com/jinyeying/RaindropClarity/blob/main/analyse/cal_rf_bf.py)
+```sh
+sh script/test.sh
 ```
-python cal_rf_bf.py
-```
+For evaluate on each dataset, you should uncomment corresponding line.
 
-## Test
-```
-bash run_eval_diffusion_day.sh
-```
-```
-bash run_eval_diffusion_night.sh
-```
-Inside script, please change `model_name` accordingly. 
-```
-CUDA_VISIBLE_DEVICES=7 python eval_diffusion_day_dit.py --sid "$sid"
-```
-```
-CUDA_VISIBLE_DEVICES=6 python eval_diffusion_day_rdiffusion.py --sid "$sid"
-```
-```
-CUDA_VISIBLE_DEVICES=2 python eval_diffusion_day_restomer.py --sid "$sid"
-```
-```
-CUDA_VISIBLE_DEVICES=1 python eval_diffusion_day_uformer.py --sid "$sid"
-```
-```
-CUDA_VISIBLE_DEVICES=2 python eval_diffusion_day_onego.py --sid "$sid"
-```
-```
-CUDA_VISIBLE_DEVICES=1 python eval_diffusion_day_idt.py --sid "$sid"
-```
-```
-CUDA_VISIBLE_DEVICES=2 python eval_diffusion_day_icra.py --sid "$sid"
-```
-```
-CUDA_VISIBLE_DEVICES=1 python eval_diffusion_day_atgan.py --sid "$sid"
-```
 
-## Train
-```
-CUDA_VISIBLE_DEVICES=1,2 python train.py --config daytime_64.yml --test_set Raindrop_DiT
-```
-please change `daytime_64.yml`,`daytime_128.yml`,`daytime_256.yml` according to `model_name` and `image_size`.
+## Results
+Experiments are performed for different image processing tasks including, rain streak removal, raindrop removal, and haze removal. 
+Here is a summary table containing hyperlinks for easy navigation:
 
-## Acknowledgments
-Code is implemented based [WeatherDiffusion](https://github.com/IGITUGraz/WeatherDiffusion), we would like to thank them.
+<table>
+  <tr>
+    <th align="left">Benchmark</th>
+    <th align="center">Pretrained model</th>
+    <th align="center">Visual Results</th>
+  </tr>
+  <tr>
+    <td align="left">SPAD</td>
+    <td align="center"><a href="https://pan.baidu.com/s/1uqsXeztA55ny8vnQHfxmlA?pwd=h68m">(code:h68m)</a></td>
+    <td align="center"><a href="https://pan.baidu.com/s/1KtAWESp3mzfrV4qy7BLaWg?pwd=wqdg">(code:wqdg)</a></td>
+  </tr>
+  <tr>
+    <td align="left">AGAN</td>
+    <td align="center"><a href="https://pan.baidu.com/s/1obhEpvWLV9FLF47FMcNX7g?pwd=astt">(code:astt)</a></td>
+    <td align="center"><a href="https://pan.baidu.com/s/1VewSQl6c7uWHpfCDVQeW4g?pwd=astt">(code:astt)</a></td>
 
-## License
-The code and models in this repository are licensed under the MIT License for academic and other non-commercial uses.<br>
-For commercial use of the code and models, separate commercial licensing is available. Please contact:
-- Yeying Jin (jinyeying@u.nus.edu)
-- Jonathan Tan (jonathan_tano@nus.edu.sg)
+  </tr>
+  <tr>
+    <td align="left">Dense-Haze</td>
+    <td align="center"><a href="https://pan.baidu.com/s/1PeSaf-ZRwnMBjlNHGEkvzg?pwd=astt">(code:astt)</a></td>
+    <td align="center"><a href="https://pan.baidu.com/s/18JK8hQFLzSuiVZyianmJQw?pwd=astt">(code:astt)</a></td>
+  </tr>
 
-### Citation
-If this work is useful for your research, please cite our paper. 
-```BibTeX
-@inproceedings{jin2024raindrop,
-  title={Raindrop Clarity: A Dual-Focused Dataset for Day and Night Raindrop Removal},
-  author={Jin, Yeying and Li, Xin and Wang, Jiadong and Zhang, Yan and Zhang, Malu},
-  booktitle={European Conference on Computer Vision},
-  pages={1--17},
-  year={2024},
-  organization={Springer}
-}
-```
+</table>
+
+## Citation
+If you find this project useful, please consider citing:
+
+    @inproceedings{zhou2024AST,
+      title={Adapt or Perish: Adaptive Sparse Transformer with Attentive Feature Refinement for Image Restoration},
+      author={Zhou, Shihao and Chen, Duosheng and Pan, Jinshan and Shi, Jinglei and Yang, Jufeng},
+      booktitle={CVPR},
+      year={2024}
+    }
+
+## Acknowledgement
+
+This code borrows heavily from [Uformer](https://github.com/ZhendongWang6/Uformer).
